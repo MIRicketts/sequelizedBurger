@@ -95,16 +95,23 @@
 
 const Sequelize = require("sequelize");
 
-const sequelize = require("./connection.js")
+const sequelize = require("./connection")
 
 
-const burgers = sequelize.define({
-  burger_name : Sequelize.STRING,
-  devoured : Sequelize.BOOLEAN
+const Burger = sequelize.define(
+  "Burger",
+  {
+  burger_name : {
+    type : Sequelize.STRING,
+    allowNull : false
+  },
+  devoured : {
+    type : Sequelize.BOOLEAN,
+  allowNull : false}
 });
 
 
-burgers.sync();
+Burger.sync();
 
 
-module.exports = burgers;
+module.exports = Burger;

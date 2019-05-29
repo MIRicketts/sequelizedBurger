@@ -1,18 +1,16 @@
-const mysql = require ("mysql");
+const Sequelize = require ("sequelize");
 
-let connection;
-
-if (process.env.JAWSDB_URL){
-  connection = mysql.creeateconnection(process.env.JAWSDB_URL);
-}
-else{
-  connection = mysql.createConnection({
+const sequelize = new Sequelize("burgers_db", "root", "82ithemar",{
     host : "localhost",
     port: 3306,
-    user: "root",
-    password: "82ithemar",
-    database: "burgers_db"
+    dialect: "mysql",
+    pool: {
+      max: 5,
+      min: 0,
+      idle: 10000
+    }
   });
-}
+
+
 
 module.exports = connection;
