@@ -95,7 +95,7 @@
 
 const Sequelize = require("sequelize");
 
-const sequelize = require("./connection")
+const sequelize = require("./connection.js")
 
 
 const Burger = sequelize.define(
@@ -103,12 +103,16 @@ const Burger = sequelize.define(
   {
   burger_name : {
     type : Sequelize.STRING,
-    allowNull : false
+    allowNull : true
   },
   devoured : {
     type : Sequelize.BOOLEAN,
-  allowNull : false}
-});
+  allowNull : true
+  }
+  },
+  {
+  timestamps: false
+  });
 
 
 Burger.sync();
