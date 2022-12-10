@@ -18,7 +18,7 @@
   "homepage": "https://github.com/MIRicketts/eat-da-burger#readme",
   "dependencies": {
     "2": "^2.0.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-handlebars": "^3.0.2",
     "i": "^0.3.6",
     "mysql": "^2.17.1",
